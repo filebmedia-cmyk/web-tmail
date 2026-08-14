@@ -9,8 +9,7 @@ const PORT = process.env.PORT || 3000;
 // Enable CORS for all routes (if accessed from different port)
 app.use(cors());
 
-// Serve static files from current directory
-app.use(express.static(__dirname));
+// Static files are handled natively by Vercel from the public/ folder
 
 // Proxy configuration
 const proxyConfig = {
@@ -67,14 +66,15 @@ app.get('/api/download', async (req, res) => {
     }
 });
 
-// Start the server
-app.listen(PORT, () => {
-    console.log(`=====================================`);
-    console.log(`CYBER MAIL OTP - LOCAL SERVER ACTIVE`);
-    console.log(`Server running at: http://localhost:${PORT}`);
-    console.log(`Proxy: gw.dataimpulse.com:823`);
-    console.log(`=====================================`);
-});
+// Start the server (Only if running locally, Vercel will ignore this)
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`=====================================`);
+        console.log(`CYBER MAIL OTP - LOCAL SERVER ACTIVE`);
+        console.log(`Server running at: http://localhost:${PORT}`);
+        console.log(`Proxy: gw.dataimpulse.com:823`);
+        console.log(`=====================================`);
+    });
+}
 
 module.exports = app; // Diperlukan untuk deployment di Vercel
-
