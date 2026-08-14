@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER MAIL OTP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Share+Tech+Mono&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navigation to Admin -->
+    <div class="top-nav" id="main-nav">
+        <a href="admin.html"><i class="ph-duotone ph-terminal-window"></i> SYS.ADMIN</a>
+    </div>
+
+    <!-- Main Fetcher Screen -->
+    <div id="main-screen">
+        <div class="container">
+            <div class="terminal-top-bar">
+                <div class="terminal-dots">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="terminal-title">This Flatimo</div>
+            </div>
+            <div class="header glitch-wrapper">
+                <h1 class="glitch" data-text="TMAIL FLATIMO">TMAIL FLATIMO</h1>
+                <p>@flatimoo</p>
+            </div>
+            
+            <div class="form-group animate-in delay-1">
+                <label><i class="ph-duotone ph-envelope-simple"></i> Target Email Address</label>
+                <div class="input-row">
+                    <input type="email" id="email-input" class="username-input" placeholder="username@domain.com" autocomplete="off">
+                </div>
+            </div>
+
+            <div class="form-group animate-in delay-2">
+                <label><i class="ph-duotone ph-funnel-simple"></i> Filter & Extract</label>
+                <div class="filters">
+                    <button class="filter-btn" id="btn-filter-capcut"><i class="ph-duotone ph-scissors"></i> CAPCUT OTP</button>
+                </div>
+            </div>
+
+            <button class="btn-primary animate-in delay-3" id="btn-fetch"><i class="ph-duotone ph-paper-plane-tilt"></i> INITIATE FETCH</button>
+            
+            <div class="loader" id="loader">FETCHING DATA...</div>
+
+            <div class="results-container" id="results">
+                <!-- Email items will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Alert Modal -->
+    <div id="custom-alert-modal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="terminal-top-bar error-bar">
+                <div class="terminal-dots">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <div class="terminal-title">SYS_ERROR</div>
+            </div>
+            <div class="modal-content">
+                <h2 class="modal-title"><i class="ph-duotone ph-warning"></i> SYSTEM ALERT</h2>
+                <p id="custom-alert-message" class="modal-message">Error message goes here.</p>
+                <button id="custom-alert-close" class="btn-primary error-btn">ACKNOWLEDGE</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

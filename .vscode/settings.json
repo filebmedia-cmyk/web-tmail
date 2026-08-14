@@ -1,0 +1,7 @@
+{
+    "liveServer.settings.proxy": {
+        "enable": true,
+        "baseUri": "/proxy-api",
+        "proxyUri": "https://flatimostore.biz.id/api"
+    }
+}
