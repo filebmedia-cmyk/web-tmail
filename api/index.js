@@ -17,8 +17,8 @@ const proxyConfig = {
     host: 'gw.dataimpulse.com',
     port: 823,
     auth: {
-        username: 'd1ff2c17ca38750493e2',
-        password: '265783d7aff7af4d'
+        username: process.env.PROXY_USER,
+        password: process.env.PROXY_PASS
     }
 };
 
