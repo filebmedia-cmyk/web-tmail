@@ -114,10 +114,9 @@ document.addEventListener("DOMContentLoaded", () => {
             const val = newDomainInput.value.trim().toLowerCase();
             if (!val) return;
             
-            // basic domain validation regex
-            const regex = /^[a-zA-Z0-9][a-zA-Z0-9-]{1,61}[a-zA-Z0-9]\.[a-zA-Z]{2,}$/;
-            if(!regex.test(val)){
-                alert("INVALID DOMAIN FORMAT.");
+            // Allow any string without @ or spaces
+            if (val.includes('@') || val.includes(' ')) {
+                alert("PLEASE ENTER DOMAIN ONLY (NO '@' OR SPACES).");
                 return;
             }
 
