@@ -103,11 +103,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            if (!domains.includes(domain)) {
-                showError("ERROR: UNREGISTERED DOMAIN (@" + domain + ").\nACCESS DENIED.");
-                return;
-            }
-
             const fullAddress = `${username}@${domain}`;
             
             btnFetch.disabled = true;
