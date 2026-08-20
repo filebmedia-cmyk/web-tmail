@@ -22,7 +22,7 @@ app.get('/api/inbox', async (req, res) => {
             return res.status(400).json({ error: "Address is required" });
         }
 
-        const targetUrl = ${API_BASE}/api/inbox?address=;
+        const targetUrl = `${API_BASE}/api/inbox?address=${encodeURIComponent(address)}`;
         const response = await axios.get(targetUrl);
         res.json(response.data);
     } catch (error) {
@@ -39,7 +39,7 @@ app.get('/api/download', async (req, res) => {
             return res.status(400).json({ error: "Missing parameters" });
         }
 
-        const targetUrl = ${API_BASE}/api/download?address=&emailId=&type=;
+        const targetUrl = `${API_BASE}/api/download?address=${encodeURIComponent(address)}&emailId=${encodeURIComponent(emailId)}&type=${encodeURIComponent(type || 'email')}`;
         const response = await axios.get(targetUrl);
         
         if (typeof response.data === 'object') {
@@ -55,8 +55,8 @@ app.get('/api/download', async (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-    console.log(=====================================);
-    console.log(CYBER MAIL OTP - VPS SERVER ACTIVE);
-    console.log(Server running at: http://localhost:);
-    console.log(=====================================);
+    console.log(`=====================================`);
+    console.log(`CYBER MAIL OTP - VPS SERVER ACTIVE`);
+    console.log(`Server running at: http://localhost:${PORT}`);
+    console.log(`=====================================`);
 });
